@@ -1,0 +1,100 @@
+html{
+    background-color: rgb(59, 59, 59);
+}
+body{
+    width: 70%;
+
+    max-width: 1600px;
+ 
+    background-color: rgb(31, 31, 31);
+    margin: auto;
+ 
+    border-radius: 3%;
+    color: white;
+}
+header, footer{
+    min-height: 100px;
+    background-color: rgba(188, 188, 188, 0.518);
+    padding: 10px;
+    text-align: center;
+    
+}
+section{
+    min-height: 900px;
+}
+#optionContainer {
+    display: grid;
+    grid-template-columns: repeat(4,150px);
+   
+    grid-gap: 30px;
+    width: 50%;
+    margin: auto;
+    /* margin-top: 50px; */
+
+    text-align: center;
+    font-size: 1.4em;
+    justify-content: center;
+    padding: 20px;
+
+
+}
+
+#optionContainer a {
+    background-color: rgb(52, 52, 253);
+    color: white;
+    padding: 10px;
+    border-radius: 4%;
+    text-decoration: none;
+
+
+}
+#optionContainer a:hover{
+    background-color: blue;
+    text-decoration: underline;
+}
+#inputContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    margin: auto;
+    grid-gap: 20px;
+}
+#inputContainer fieldset{
+    width: 80%;
+    height: 90%;
+    border: none;
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 10%;
+}
+textarea{
+    border-radius: 3%;
+    padding: 10px;
+}
+legend{
+    color: white;
+    background-color: rgb(52, 52, 253);
+    padding: 5px;
+    border-radius: 7%;
+}
+#generateButton{
+    width: 150px;
+    height: 75px;
+    background-color: rgb(52, 52, 253);
+    color: white;
+    display: block;
+    margin: auto;
+    font-size: 1.2em;
+    border-radius: 7%;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#generateButton:hover{
+    font-size: 1.3em;
+    background-color: rgb(77, 174, 142);
+}
+.message{
+    width: 60%;
+    margin: auto;
+}
