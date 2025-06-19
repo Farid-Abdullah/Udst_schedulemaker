@@ -1,10 +1,11 @@
 html{
     background-color: rgb(59, 59, 59);
+    width: 100%;
 }
 body{
-    width: 70%;
+    box-sizing: 90%;
 
-    max-width: 1600px;
+    
  
     background-color: rgb(31, 31, 31);
     margin: auto;
@@ -13,9 +14,9 @@ body{
     color: white;
 }
 header, footer{
-    min-height: 100px;
+
     background-color: rgba(188, 188, 188, 0.518);
-    padding: 10px;
+    padding: 2px;
     text-align: center;
     
 }
@@ -24,9 +25,9 @@ section{
 }
 #optionContainer {
     display: grid;
-    grid-template-columns: repeat(4,150px);
+    grid-template-columns: repeat(5,30%);
    
-    grid-gap: 30px;
+    grid-gap: 5%;
     width: 50%;
     margin: auto;
     /* margin-top: 50px; */
