@@ -1,4 +1,30 @@
 
+function load_test_data(numCourses){
+    let c1_data = document.getElementById("hidden1").innerText
+    let c2_data = document.getElementById("hidden2").innerText
+    let c1 = document.getElementById("course-data")
+    let c2 = document.getElementById("course-data2")
+   
+    c1.innerHTML = c1_data
+    c2.innerHTML= c2_data
+    
+   if (numCourses>2){
+    const c3_data = document.getElementById("hidden3").innerText
+    let c3 = document.getElementById("course-data3")
+    c3.innerHTML = c3_data
+}
+   if (numCourses > 3){
+    const c4_data = document.getElementById("hidden4").innerText
+    let c4 = document.getElementById("course-data4")
+    c4.innerHTML = c4_data
+    
+   }
+   if (numCourses == 5){
+   const c5_data = document.getElementById("hidden2").innerText // reusing
+   let c5 = document.getElementById("course-data5")
+   c5.innerHTML = c5_data
+}
+}   
 
 
 function combination(...arrays) {
@@ -70,7 +96,7 @@ function outputIs3() {
     
 
     Course_names = [course1, course2, course3]
-    console.log(Course_names)
+    
 
     let all_sections = [processArray('course-data'), processArray('course-data2'), processArray('course-data3')]
 
@@ -106,16 +132,16 @@ function outputIs3() {
     function outputIs2() {
         const course1 = document.getElementById("course-1").value
         const course2 = document.getElementById("course-2").value
-       console.log('anything??')
+      
         
     
         Course_names = [course1, course2]
-        console.log(Course_names)
+        
     
         let all_sections = [processArray('course-data'), processArray('course-data2')]
-        console.log(all_sections)
+       
         let all_combination = combination(processArray('course-data'), processArray('course-data2'))
-        console.log(all_combination[3])
+      
         let i = 0
     
         let min = 999

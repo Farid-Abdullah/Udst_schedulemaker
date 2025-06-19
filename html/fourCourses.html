@@ -8,24 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/layout.css">
     <script src="../js/gererateSchedule.js"></script>
-    <style>
-        #test-data{
-            display: flex;
-            width: 60%;
-            margin: auto;
-            
-            justify-content: space-evenly;
-            align-items: baseline;
-            margin-bottom: 10px;
-            background-color:  rgba(188, 188, 188, 0.518);
-          
-        }
-        #test-data>button,h2{
-           
-            margin: 0.3em;
-            align-self: center;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -52,14 +35,59 @@
                 <div id="option4">5 courses</div>
             </a>
         </div>
-       <div id="test-data"> <h3>Fill out the following</h3> <h3>or</h3><button onclick="load_test_data()">Load test Data</button></div>
+       <div id="test-data">
+         <h4>Fill out the following</h4>
+          <h4>Or <a onclick = "load_test_data(4)" href="#" style="color:rgb(30, 144, 255)">Load test data</a></h4>
+        </div>
         <div id="inputContainer">
             <div id="first">
                 <fieldset>
                     <legend>Course # 1</legend>
-                    <input type="text" placeholder="Course Code/Name" id="course-1" value="INFS 2201"><br><br>
+                    <input type="text" placeholder="Course Code/Name" id="course-1" value="course 1"><br><br>
                     <textarea name="" id="course-data" cols="30" rows="10" placeholder="Course 1 Data"> 
-                        INFS 2201
+                    </textarea>
+                </fieldset>
+            </div>
+            <div id="second">
+                <fieldset>
+                    <legend>Course # 2</legend>
+                    <input type="text" placeholder="Course Code/Name" id="course-2" value="Course 2"><br><br>
+                    <textarea name="" id="course-data2" cols="30" rows="10" placeholder="Course 2 Data">
+
+           </textarea>
+                </fieldset>
+            </div>
+            <div id="third">
+                <fieldset>
+                    <legend>Course # 3</legend>
+                    <input type="text" placeholder="Course Code/Name" id="course-3" value="Course 3"><br><br>
+                    <textarea name="" id="course-data3" cols="30" rows="10" placeholder="Course 3 Data">
+        </textarea>
+                </fieldset>
+            </div>
+            <div id="fourth">
+                <fieldset>
+                    <legend>Course # 4</legend>
+                    <input type="text" placeholder="Course Code/Name" id="course-4" value="Course 4"><br><br>
+                    <textarea name="" id="course-data4" cols="30" rows="10" placeholder="Course 4 Data">
+                                     </textarea>
+                </fieldset>
+            </div>
+        </div>
+        <br>
+        <button id="generateButton" onclick="outputIs4()">Generate Schedule</button> <br>
+    </section>
+
+    <div id="result">
+        <div id="best-schedules"></div>
+        <div id="The_rest"></div>
+    </div>
+
+    <footer>
+        footer tag
+    </footer>
+    <div id="hiddenDiv" style="display: none;">
+    <pre id="hidden1"> INFS 2201
                         Database Management Systems
                         Course Information
                         Class Selection
@@ -244,126 +272,218 @@
                         Open Seats 12 of 72
                         Closed
                          
-                        Cancel</textarea>
-                </fieldset>
-            </div>
-            <div id="second">
-                <fieldset>
-                    <legend>Course # 2</legend>
-                    <input type="text" placeholder="Course Code/Name" id="course-2" value="INFT 2201"><br><br>
-                    <textarea name="" id="course-data2" cols="30" rows="10" placeholder="Course 2 Data">Press Control+M to start dragging object
-                        Swap Classes
-                        Course Information
-                        HomeGlobal Search'Notification'Actions
-                        Winter 2025
-                         
-                        INFT 2201
-                        Introduction to Operating Systems
-                        Course Information
-                        Class Selection
-                        Select a class option
-                        4 options
-                        Option
-                        Status
-                        Session
-                        Class
-                        Meeting Dates
-                        Days and Times
-                        Room
-                        Instructor
-                        Seats
-                        1
-                        Open
-                        Regular Academic Session
-                        Lecture - Class 3154 -Section 1
-                        Laboratory - Class 3156 -Section 3
-                        31/12/2024 - 15/04/2025
-                        Tuesday
-                        12:00PM to 1:00PM
-                        Thursday
-                        12:00PM to 1:00PM
-                        Sunday
-                        2:00PM to 5:00PM
-                        01.1.06
-                        01.1.06
-                        10.1.02
-                        Adnan Adnan
-                        Adnan Adnan
-                        Adnan Adnan
-                        Open Seats 42 of 90
-                        Open Seats 6 of 22
-                         
-                        2
-                        Open
-                        Regular Academic Session
-                        Lecture - Class 3154 -Section 1
-                        Laboratory - Class 3157 -Section 4
-                        31/12/2024 - 15/04/2025
-                        Tuesday
-                        12:00PM to 1:00PM
-                        Thursday
-                        12:00PM to 1:00PM
-                        Wednesday
-                        2:00PM to 5:00PM
-                        01.1.06
-                        01.1.06
-                        10.1.02
-                        Adnan Adnan
-                        Adnan Adnan
-                        Adnan Adnan
-                        Open Seats 42 of 90
-                        Open Seats 12 of 22
-                         
-                        3
-                        Open
-                        Regular Academic Session
-                        Lecture - Class 3158 -Section 5
-                        Laboratory - Class 3159 -Section 6
-                        31/12/2024 - 15/04/2025
-                        Tuesday
-                        8:00AM to 9:00AM
-                        Thursday
-                        8:00AM to 9:00AM
-                        Monday
-                        8:00AM to 11:00AM
-                        01.1.06
-                        01.1.06
-                        10.1.02
-                        Amal Saad
-                        Amal Saad
-                        Amal Saad
-                        Open Seats 72 of 90
-                        Open Seats 4 of 22
-                        4
-                        Closed
-                        Regular Academic Session
-                        Lecture - Class 3154 -Section 1
-                        Laboratory - Class 3155 -Section 2
-                        31/12/2024 - 15/04/2025
-                        Tuesday
-                        12:00PM to 1:00PM
-                        Thursday
-                        12:00PM to 1:00PM
-                        Monday
-                        2:00PM to 5:00PM
-                        01.1.06
-                        01.1.06
-                        10.1.02
-                        Adnan Adnan
-                        Adnan Adnan
-                        Adnan Adnan
-                        Open Seats 42 of 90
-                        Closed
-                         
-                        Cancel</textarea>
-                </fieldset>
-            </div>
-            <div id="third">
-                <fieldset>
-                    <legend>Course # 3</legend>
-                    <input type="text" placeholder="Course Code/Name" id="course-3" value="DSAI 2201"><br><br>
-                    <textarea name="" id="course-data3" cols="30" rows="10" placeholder="Course 3 Data">Press Control+M to start dragging object
-                        Swap Classes
+                        Cancel</pre>
+                         <pre id="hidden2">Press Control+M to start dragging object
+
+HomeGlobal Search'Notification'Actions
+Winter 2025
+ 
+DACS 2201
+Introduction to Data & Cyber Security
+Course Information
+Class Selection
+Select a class option
+9 options
+Option
+Status
+Session
+Class
+Meeting Dates
+Days and Times
+Room
+Instructor
+Seats
+1
+Open
+Regular Academic Session
+Lecture - Class 2839 -Section 1
+Laboratory - Class 2840 -Section 2
+31/12/2024 - 15/04/2025
+Wednesday
+8:00AM to 10:00AM
+Tuesday
+12:30PM to 2:00PM
+Thursday
+12:30PM to 2:00PM
+01.1.06
+10.2.17
+10.2.17
+Bassam Moussa
+Bassam Moussa
+Bassam Moussa
+Open Seats 36 of 100
+Open Seats 16 of 24
+ 
+2
+Open
+Regular Academic Session
+Lecture - Class 2839 -Section 1
+Laboratory - Class 2842 -Section 4
+31/12/2024 - 15/04/2025
+Wednesday
+8:00AM to 10:00AM
+Tuesday
+8:00AM to 9:30AM
+Thursday
+8:00AM to 9:30AM
+01.1.06
+10.2.17
+10.2.17
+Bassam Moussa
+Suzan Ali
+Suzan Ali
+Open Seats 36 of 100
+Open Seats 16 of 24
+ 
+3
+Open
+Regular Academic Session
+Lecture - Class 2839 -Section 1
+Laboratory - Class 2843 -Section 5
+31/12/2024 - 15/04/2025
+Wednesday
+8:00AM to 10:00AM
+Tuesday
+2:00PM to 3:30PM
+Thursday
+2:00PM to 3:30PM
+01.1.06
+10.2.17
+10.2.17
+Bassam Moussa
+Areej Eliyan
+Areej Eliyan
+Open Seats 36 of 100
+Open Seats 9 of 24
+ 
+4
+Open
+Regular Academic Session
+Lecture - Class 2839 -Section 1
+Laboratory - Class 2844 -Section 6
+31/12/2024 - 15/04/2025
+Wednesday
+8:00AM to 10:00AM
+Tuesday
+11:00AM to 12:30PM
+Thursday
+11:00AM to 12:30PM
+01.1.06
+10.2.17
+10.2.17
+Bassam Moussa
+Suzan Ali
+Suzan Ali
+Open Seats 36 of 100
+Open Seats 15 of 24
+ 
+5
+Open
+Regular Academic Session
+Lecture - Class 2846 -Section 8
+Laboratory - Class 2849 -Section 11
+31/12/2024 - 15/04/2025
+Wednesday
+6:00PM to 8:00PM
+Thursday
+12:30PM to 2:00PM
+Sunday
+12:30PM to 2:00PM
+01.2.05
+10.2.16
+10.2.16
+Hussam Fetyan
+Hussam Fetyan
+Hussam Fetyan
+Open Seats 76 of 100
+Open Seats 17 of 24
+ 
+6
+Open
+Regular Academic Session
+Lecture - Class 2846 -Section 8
+Laboratory - Class 2850 -Section 12
+31/12/2024 - 15/04/2025
+Wednesday
+6:00PM to 8:00PM
+Tuesday
+3:30PM to 5:00PM
+Sunday
+3:30PM to 5:00PM
+01.2.05
+10.2.16
+10.2.16
+Hussam Fetyan
+Areej Eliyan
+Areej Eliyan
+Open Seats 76 of 100
+Open Seats 16 of 24
+ 
+7
+Open
+Regular Academic Session
+Lecture - Class 2846 -Section 8
+Laboratory - Class 2851 -Section 13
+31/12/2024 - 15/04/2025
+Wednesday
+6:00PM to 8:00PM
+Monday
+2:00PM to 3:30PM
+Wednesday
+2:00PM to 3:30PM
+01.2.05
+10.2.16
+10.2.16
+Hussam Fetyan
+Ahmad Mansour
+Ahmad Mansour
+Open Seats 76 of 100
+Open Seats 17 of 24
+ 
+8
+Open
+Regular Academic Session
+Lecture - Class 2846 -Section 8
+Laboratory - Class 2847 -Section 9
+31/12/2024 - 15/04/2025
+Wednesday
+6:00PM to 8:00PM
+Tuesday
+2:00PM to 3:30PM
+Sunday
+2:00PM to 3:30PM
+01.2.05
+10.2.16
+10.2.16
+Hussam Fetyan
+Bassam Moussa
+Bassam Moussa
+Open Seats 76 of 100
+Open Seats 22 of 24
+ 
+9
+Closed
+Regular Academic Session
+Lecture - Class 2839 -Section 1
+Laboratory - Class 2841 -Section 3
+31/12/2024 - 15/04/2025
+Wednesday
+8:00AM to 10:00AM
+Tuesday
+9:30AM to 11:00AM
+Thursday
+9:30AM to 11:00AM
+01.1.06
+10.2.17
+10.2.17
+Bassam Moussa
+Suzan Ali
+Suzan Ali
+Open Seats 36 of 100
+Closed
+ 
+Cancel</pre>
+<pre id="hidden3">  
                         Course Information
                         HomeGlobal Search'Notification'Actions
                         Winter 2025
@@ -592,241 +712,113 @@
                         Open Seats 69 of 120
                         Closed
                          
-                        Cancel</textarea>
-                </fieldset>
-            </div>
-            <div id="fourth">
-                <fieldset>
-                    <legend>Course # 4</legend>
-                    <input type="text" placeholder="Course Code/Name" id="course-4" value="DACS 2201"><br><br>
-                    <textarea name="" id="course-data4" cols="30" rows="10" placeholder="Course 4 Data">
-                        Press Control+M to start dragging object
-Swap Classes
-Course Information
-HomeGlobal Search'Notification'Actions
-Winter 2025
- 
-DACS 2201
-Introduction to Data & Cyber Security
-Course Information
-Class Selection
-Select a class option
-9 options
-Option
-Status
-Session
-Class
-Meeting Dates
-Days and Times
-Room
-Instructor
-Seats
-1
-Open
-Regular Academic Session
-Lecture - Class 2839 -Section 1
-Laboratory - Class 2840 -Section 2
-31/12/2024 - 15/04/2025
-Wednesday
-8:00AM to 10:00AM
-Tuesday
-12:30PM to 2:00PM
-Thursday
-12:30PM to 2:00PM
-01.1.06
-10.2.17
-10.2.17
-Bassam Moussa
-Bassam Moussa
-Bassam Moussa
-Open Seats 36 of 100
-Open Seats 16 of 24
- 
-2
-Open
-Regular Academic Session
-Lecture - Class 2839 -Section 1
-Laboratory - Class 2842 -Section 4
-31/12/2024 - 15/04/2025
-Wednesday
-8:00AM to 10:00AM
-Tuesday
-8:00AM to 9:30AM
-Thursday
-8:00AM to 9:30AM
-01.1.06
-10.2.17
-10.2.17
-Bassam Moussa
-Suzan Ali
-Suzan Ali
-Open Seats 36 of 100
-Open Seats 16 of 24
- 
-3
-Open
-Regular Academic Session
-Lecture - Class 2839 -Section 1
-Laboratory - Class 2843 -Section 5
-31/12/2024 - 15/04/2025
-Wednesday
-8:00AM to 10:00AM
-Tuesday
-2:00PM to 3:30PM
-Thursday
-2:00PM to 3:30PM
-01.1.06
-10.2.17
-10.2.17
-Bassam Moussa
-Areej Eliyan
-Areej Eliyan
-Open Seats 36 of 100
-Open Seats 9 of 24
- 
-4
-Open
-Regular Academic Session
-Lecture - Class 2839 -Section 1
-Laboratory - Class 2844 -Section 6
-31/12/2024 - 15/04/2025
-Wednesday
-8:00AM to 10:00AM
-Tuesday
-11:00AM to 12:30PM
-Thursday
-11:00AM to 12:30PM
-01.1.06
-10.2.17
-10.2.17
-Bassam Moussa
-Suzan Ali
-Suzan Ali
-Open Seats 36 of 100
-Open Seats 15 of 24
- 
-5
-Open
-Regular Academic Session
-Lecture - Class 2846 -Section 8
-Laboratory - Class 2849 -Section 11
-31/12/2024 - 15/04/2025
-Wednesday
-6:00PM to 8:00PM
-Thursday
-12:30PM to 2:00PM
-Sunday
-12:30PM to 2:00PM
-01.2.05
-10.2.16
-10.2.16
-Hussam Fetyan
-Hussam Fetyan
-Hussam Fetyan
-Open Seats 76 of 100
-Open Seats 17 of 24
- 
-6
-Open
-Regular Academic Session
-Lecture - Class 2846 -Section 8
-Laboratory - Class 2850 -Section 12
-31/12/2024 - 15/04/2025
-Wednesday
-6:00PM to 8:00PM
-Tuesday
-3:30PM to 5:00PM
-Sunday
-3:30PM to 5:00PM
-01.2.05
-10.2.16
-10.2.16
-Hussam Fetyan
-Areej Eliyan
-Areej Eliyan
-Open Seats 76 of 100
-Open Seats 16 of 24
- 
-7
-Open
-Regular Academic Session
-Lecture - Class 2846 -Section 8
-Laboratory - Class 2851 -Section 13
-31/12/2024 - 15/04/2025
-Wednesday
-6:00PM to 8:00PM
-Monday
-2:00PM to 3:30PM
-Wednesday
-2:00PM to 3:30PM
-01.2.05
-10.2.16
-10.2.16
-Hussam Fetyan
-Ahmad Mansour
-Ahmad Mansour
-Open Seats 76 of 100
-Open Seats 17 of 24
- 
-8
-Open
-Regular Academic Session
-Lecture - Class 2846 -Section 8
-Laboratory - Class 2847 -Section 9
-31/12/2024 - 15/04/2025
-Wednesday
-6:00PM to 8:00PM
-Tuesday
-2:00PM to 3:30PM
-Sunday
-2:00PM to 3:30PM
-01.2.05
-10.2.16
-10.2.16
-Hussam Fetyan
-Bassam Moussa
-Bassam Moussa
-Open Seats 76 of 100
-Open Seats 22 of 24
- 
-9
-Closed
-Regular Academic Session
-Lecture - Class 2839 -Section 1
-Laboratory - Class 2841 -Section 3
-31/12/2024 - 15/04/2025
-Wednesday
-8:00AM to 10:00AM
-Tuesday
-9:30AM to 11:00AM
-Thursday
-9:30AM to 11:00AM
-01.1.06
-10.2.17
-10.2.17
-Bassam Moussa
-Suzan Ali
-Suzan Ali
-Open Seats 36 of 100
-Closed
- 
-Cancel
-                    </textarea>
-                </fieldset>
-            </div>
-        </div>
-        <br>
-        <button id="generateButton" onclick="outputIs4()">Generate Schedule</button> <br>
-    </section>
-
-    <div id="result">
-        <div id="best-schedules"></div>
-        <div id="The_rest"></div>
-    </div>
-
-    <footer>
-        Schedule Builder [Footer tag]
-    </footer>
+                        Cance</pre>
+                        <pre id="hidden4">
+                            Swap Classes
+                        Course Information
+                        HomeGlobal Search'Notification'Actions
+                        Winter 2025
+                         
+                        INFT 2201
+                        Introduction to Operating Systems
+                        Course Information
+                        Class Selection
+                        Select a class option
+                        4 options
+                        Option
+                        Status
+                        Session
+                        Class
+                        Meeting Dates
+                        Days and Times
+                        Room
+                        Instructor
+                        Seats
+                        1
+                        Open
+                        Regular Academic Session
+                        Lecture - Class 3154 -Section 1
+                        Laboratory - Class 3156 -Section 3
+                        31/12/2024 - 15/04/2025
+                        Tuesday
+                        12:00PM to 1:00PM
+                        Thursday
+                        12:00PM to 1:00PM
+                        Sunday
+                        2:00PM to 5:00PM
+                        01.1.06
+                        01.1.06
+                        10.1.02
+                        Adnan Adnan
+                        Adnan Adnan
+                        Adnan Adnan
+                        Open Seats 42 of 90
+                        Open Seats 6 of 22
+                         
+                        2
+                        Open
+                        Regular Academic Session
+                        Lecture - Class 3154 -Section 1
+                        Laboratory - Class 3157 -Section 4
+                        31/12/2024 - 15/04/2025
+                        Tuesday
+                        12:00PM to 1:00PM
+                        Thursday
+                        12:00PM to 1:00PM
+                        Wednesday
+                        2:00PM to 5:00PM
+                        01.1.06
+                        01.1.06
+                        10.1.02
+                        Adnan Adnan
+                        Adnan Adnan
+                        Adnan Adnan
+                        Open Seats 42 of 90
+                        Open Seats 12 of 22
+                         
+                        3
+                        Open
+                        Regular Academic Session
+                        Lecture - Class 3158 -Section 5
+                        Laboratory - Class 3159 -Section 6
+                        31/12/2024 - 15/04/2025
+                        Tuesday
+                        8:00AM to 9:00AM
+                        Thursday
+                        8:00AM to 9:00AM
+                        Monday
+                        8:00AM to 11:00AM
+                        01.1.06
+                        01.1.06
+                        10.1.02
+                        Amal Saad
+                        Amal Saad
+                        Amal Saad
+                        Open Seats 72 of 90
+                        Open Seats 4 of 22
+                        4
+                        Closed
+                        Regular Academic Session
+                        Lecture - Class 3154 -Section 1
+                        Laboratory - Class 3155 -Section 2
+                        31/12/2024 - 15/04/2025
+                        Tuesday
+                        12:00PM to 1:00PM
+                        Thursday
+                        12:00PM to 1:00PM
+                        Monday
+                        2:00PM to 5:00PM
+                        01.1.06
+                        01.1.06
+                        10.1.02
+                        Adnan Adnan
+                        Adnan Adnan
+                        Adnan Adnan
+                        Open Seats 42 of 90
+                        Closed
+                         
+                        Cance
+                        </pre></div>
 </body>
 
 </html>
