@@ -298,12 +298,11 @@ function schedule_show(best, min, Course_names){
                 temp = temp2.slice(indexOfDay + len + 8, temp2.length)
 
                 strt = temp2.slice(indexOfDay + len + 1, indexOfDay + len + 8)
-                console.log(temp)
+              
                
                 
                 stp = temp.slice(temp.indexOf('o') + 2, temp.indexOf(':') + 5)
-                console.log(`strat: ${strt}, stp: ${stp}`)
-                console.log(temp2)
+                
                 TheArray[j] = [twelveTo(strt), twelveTo(stp)]
 
                 temp2 = temp
@@ -346,7 +345,7 @@ function schedule_show(best, min, Course_names){
     else {
         hour = parseFloat(times.slice(0,times.indexOf(":")))
         minutes = times.slice(times.indexOf(":")+1,times.indexOf(":")+3)
-        console.log(`hour: ${hour}, minutes: ${minutes}`)
+      
     }
     if (minutes == '00') {
             return hour
