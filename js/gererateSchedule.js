@@ -298,9 +298,12 @@ function schedule_show(best, min, Course_names){
                 temp = temp2.slice(indexOfDay + len + 8, temp2.length)
 
                 strt = temp2.slice(indexOfDay + len + 1, indexOfDay + len + 8)
-
-                stp = temp.slice(temp.indexOf('to') + 3, temp.indexOf('M') + 1)
-
+                console.log(temp)
+               
+                
+                stp = temp.slice(temp.indexOf('o') + 2, temp.indexOf(':') + 5)
+                console.log(`strat: ${strt}, stp: ${stp}`)
+                console.log(temp2)
                 TheArray[j] = [twelveTo(strt), twelveTo(stp)]
 
                 temp2 = temp
@@ -318,27 +321,39 @@ function schedule_show(best, min, Course_names){
 
     function twelveTo(T) {
 
-
+        // In case there is no AM and PM in the timings, means it is already in military format
+        // so :
+        
         let times = T
-
+        let minutes
+        let hour
+        if (times.includes("M")){
         let period = times.slice(times.indexOf(":") + 3, times.indexOf("M") + 1)
 
-        let minutes = times.slice(times.indexOf(":") + 1, times.indexOf(period))
+         minutes = times.slice(times.indexOf(":") + 1, times.indexOf(period))
 
-        let hour = parseFloat(times.slice(0, times.indexOf(":")))
+        hour = parseFloat(times.slice(0, times.indexOf(":")))
 
 
         if (period === "PM" && hour !== 12) {
             hour += 12
 
         }
-        if (minutes == '00') {
+       
+        
+        
+    }
+    else {
+        hour = parseFloat(times.slice(0,times.indexOf(":")))
+        minutes = times.slice(times.indexOf(":")+1,times.indexOf(":")+3)
+        console.log(`hour: ${hour}, minutes: ${minutes}`)
+    }
+    if (minutes == '00') {
             return hour
         }
-        else {
+    if (minutes == "30") {
             return hour + 0.5
         }
-
     }
     function conflictFinder(schedule) {
 
