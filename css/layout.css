@@ -151,3 +151,10 @@ th, td {
 #best-schedules>div>table{
     width: 30%;
 }
+
+table span{
+    font-size: 5px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    
+}

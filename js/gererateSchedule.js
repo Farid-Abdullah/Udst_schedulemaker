@@ -220,27 +220,11 @@ function visualize(text) {
 
         const course = line.split(":")[0].trim();
 
-        const regex = /(\d{1,2}):(\d{2})\s*(AM|PM)/i;
+ 
 
-        const match = "5:00".match(regex);
 
-        if (match) {
-            let hour = Number(match[1]);
-            let minute = match[2];
-            let period = match[3].toUpperCase();
 
-            if (period === "PM" && hour !== 12) {
-                hour += 12;
-            }
 
-            if (period === "AM" && hour === 12) {
-                hour = 0;
-            }
-
-            const time24 = `${String(hour).padStart(2, "0")}:${minute}`;
-
-            console.log(time24); // 17:00
-        }
 
         const matches = [...line.matchAll(
             /(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)\s+(\d{1,2}:\d{2}\s*(?:AM|PM)?)\s+to\s+(\d{1,2}:\d{2}\s*(?:AM|PM)?)/gi
@@ -248,9 +232,10 @@ function visualize(text) {
 
 
         matches.forEach(match => {
-            console.log(match)
+        
             events.push({
                 course,
+                timing: [match[2],match[3]],
                 day: match[1],
                 start: timeToMinutes(match[2]),
                 end: timeToMinutes(match[3]),
@@ -307,7 +292,7 @@ function visualize(text) {
                     html += `
                 <td rowspan=${event.slotSpan} class="course"
                     style="background:${event.color}">
-                    ${event.course}
+                    ${event.course}<br><span>${event.timing[0]} to ${event.timing[1]}</span> <br>
                 </td>`;
                     event.processed = true;
                 }
@@ -350,7 +335,7 @@ function schedule_show(all, min, Course_names) {
             })
         
             
-            console.log(aside.innerHTML)
+           
             
             content.innerHTML+= visualize(aside.innerHTML)
             content.appendChild(aside)
