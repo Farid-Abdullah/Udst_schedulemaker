@@ -115,3 +115,39 @@ legend{
             margin: 0.3em;
             align-self: center;
         }
+
+
+table {
+    border-collapse: collapse;
+    font-size: 0.5em;
+    width: 100%;
+}
+th{
+    background-color: #4c4c4c;
+}
+
+th, td {
+    border: 0.5px solid #3d3d3d;
+    text-align: center;
+  
+}
+
+.time {
+  
+    background: #4c4c4c;
+    font-weight: bold;
+}
+
+.course {
+    color: white;
+
+}
+#best-schedules>div{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 4px solid rgb(0, 123, 255);
+}
+#best-schedules>div>table{
+    width: 30%;
+}
